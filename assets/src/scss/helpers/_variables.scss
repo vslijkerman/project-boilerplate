@@ -1,0 +1,25 @@
+/********************
+** Site Dimensions
+********************/
+$site-width: 1200px;
+
+/********************
+** Mediaquery breakpoints
+********************/
+$bp-desktop: 1140px;
+$bp-tablet: 768px;
+$bp-mobile: 480px;
+
+/********************
+** Colors
+********************/
+
+
+/********************
+** Settings
+********************/
+$default-font-size: 14px;
+$default-line-height: 21px;
+
+// Used by button mixin - Global SASS map to store the names of all dynamic selectors
+$Placeholder-Selectors: ();

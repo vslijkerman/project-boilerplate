@@ -1,0 +1,76 @@
+/********************
+** Headings
+********************/
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+/********************
+** Paragraphs
+********************/
+
+body, p {
+  font-size: $default-font-size;
+  line-height: $default-line-height;
+}
+
+/********************
+** Links
+********************/
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/********************
+** Quotes
+********************/
+blockquote {}
+
+q {}
+
+cite {}
+
+/********************
+** Misc
+********************/
+ul {}
+
+ol {}
+
+li {}
+
+sup {}
+
+sub {}
+
+i {
+  font-style: italic;
+}
+
+b, strong {
+  font-weight: 400;
+}
+
+ins {}
+
+s {}
+
+del {}
+
+small {}
+
+pre {}
+
+code {}
+
+abbr {}
+
+acronym {}
+
+address {}
+
+hr {}

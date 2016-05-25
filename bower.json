@@ -1,0 +1,29 @@
+{
+  "name": "project-boilerplate",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Vincent Slijkerman"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "meyerreset": "https://github.com/shannonmoeller/reset-css.git",
+    "normalize": "https://github.com/JohnAlbin/normalize-scss.git",
+    "html5shiv": "https://github.com/aFarkas/html5shiv.git",
+    "jquery": "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-rc1/jquery.js",
+    "flexibility": "https://github.com/10up/flexibility.git#^1.0.6",
+    "picturefill": "https://github.com/scottjehl/picturefill.git#^3.0.2",
+    "svg4everybody": "https://github.com/jonathantneal/svg4everybody.git#^2.0.3",
+    "raf": "https://gist.github.com/1579671.git",
+    "fontawesome": "https://github.com/FortAwesome/Font-Awesome.git"
+  }
+}

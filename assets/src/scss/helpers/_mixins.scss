@@ -1,0 +1,218 @@
+/********************
+** Mixins
+********************/
+
+// Transform
+// @include transform('scale(2)')
+// @include transform('translateX(50px) translateY(50px)')
+@mixin transform($properties...) {
+  @each $prefix in -moz-, -webkit-, -o-, -ms-, null {
+    #{$prefix}transform: #{$properties};
+  }
+}
+
+// transform-origin
+@mixin transform-origin($properties...) {
+  @each $prefix in -moz-, -webkit-, -o-, -ms-, null {
+    #{$prefix}transform-origin: #{$properties};
+  }
+}
+
+// Transition
+@mixin transition($properties...) {
+  @each $prefix in -webkit-, -moz-, -ms-, -o-, null {
+    #{$prefix}transition: #{$properties};
+  }
+}
+
+// Opacity
+// @include opacity(0.5)
+@mixin opacity($percentage) {
+  $filterPercentage: $percentage * 100;
+  opacity: $percentage;
+  filter: alpha(opacity=$filterPercentage); // IE
+}
+
+// Triangle (with orientation as pointer direction)
+// @include triangle('left', 5, 5, #F00);
+@mixin triangle($direction, $width, $height, $color) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -webkit-transform: rotate(0.01deg); // Safari aliasing fix
+  @if ($direction == 'top') {
+    border-width: 0 #{$width/2}px #{$height}px #{$width/2}px;
+    border-color: transparent transparent $color transparent;
+    border-color: rgba(255,255,255,0) rgba(255,255,255,0) $color rgba(255,255,255,0);
+  }
+  @else if ($direction == 'right') {
+    border-width: #{$height/2}px 0 #{$height/2}px #{$width}px;
+    border-color: transparent transparent transparent $color;
+    border-color: rgba(255,255,255,0) rgba(255,255,255,0) rgba(255,255,255,0) $color;
+  }
+  @else if ($direction == 'bottom') {
+    border-width: #{$height}px #{$width/2}px 0 #{$width/2}px;
+    border-color: $color transparent transparent transparent;
+    border-color: $color rgba(255,255,255,0) rgba(255,255,255,0) rgba(255,255,255,0);
+  }
+  @else if ($direction == 'left') {
+    border-width: #{$height/2}px #{$width}px #{$height/2}px 0;
+    border-color: transparent $color transparent transparent;
+    border-color: rgba(255,255,255,0) $color rgba(255,255,255,0) rgba(255,255,255,0);
+  }
+}
+
+// Keyframes
+@mixin keyframes($name, $properties...) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin animate($properties...) {
+  @each $prefix in -webkit-, -moz-, -o-, null {
+    #{$prefix}animation: #{$properties};
+  }
+}
+
+// Gradient background
+// @include gradient-background(#F00, #F0F, 'data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFlNTc5OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3ZGI5ZTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+');
+@mixin gradient-background($startColor, $endColor, $ie9-svg) {
+  @if $endColor == null {
+    $endColor: $startColor;
+  }
+
+  background: $startColor;
+
+  @if $ie9-svg != null {
+    background: url(#{$ie9-svg});
+  }
+
+  background: -moz-linear-gradient(top, $startColor 0, $endColor 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, $startColor), color-stop(100%, $endColor));
+  background: -webkit-linear-gradient(top, $startColor 0, $endColor 100%);
+  background: -o-linear-gradient(top, $startColor 0, $endColor 100%);
+  background: -ms-linear-gradient(top, $startColor 0, $endColor 100%);
+  background: linear-gradient(to bottom, $startColor 0, $endColor 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$startColor', endColorstr='$endColor',GradientType=0 );
+}
+
+@mixin ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+// Font metrics
+@mixin font-metrics($font-size: $default-font-size, $line-height: $default-line-height) {
+  @if $font-size {
+    font-size: $font-size;
+  }
+
+  @if $line-height {
+    line-height: $line-height;
+  }
+}
+
+/* Button
+source: http://alistapart.com/article/dry-ing-out-your-sass-mixins */
+@mixin button($color) {
+  @include button-static;
+  background-color: $color;
+  border-color: mix(black, $color, 25%);
+
+  &:hover {
+    background-color: mix(black, $color, 15%);
+    border-color: mix(black, $color, 40%);
+  }
+}
+
+// All static, non dynamic button styles
+@mixin button-static($extend: true) {
+  $button-selector: map-get($Placeholder-Selectors, 'button');
+
+  @if $extend == true {
+    @if $button-selector == null {
+        $button-selector: unique-id();
+        $Placeholder-Selectors: map-merge($Placeholder-Selectors, ('button': $button-selector)) !global;
+
+        @at-root %#{$button-selector} {
+          @include button-static(false);
+        }
+    }
+
+    @extend %#{$button-selector};
+  }
+  @else {
+    border-radius: $default-border-radius;
+    padding: 6px 20px;
+    text-decoration: none;
+  }
+}
+
+// Clearfix
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+//
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+
+// Placeholders
+@mixin hidden-absolute {
+	position:absolute;left:0;top:0;width:100%;height:100%;@include opacity(0);
+}
+
+
+@mixin breakpoint($size) {
+  @if $size == desktop {
+    $size : $bp-desktop;
+  } @else if $size == tablet {
+    $size : $bp-tablet;
+  } @else if $size == mobile {
+    $size : $bp-mobile;
+  } @else {
+    $size : $size;
+  }
+
+  @media only screen and (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin bp-below($size) {
+  @if $size != null {
+    @media only screen and (max-width: ($size-1)) {
+      @content;
+    }
+  }
+}
