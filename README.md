@@ -4,9 +4,9 @@ A project boilerplate for your HTML project with several awesome polyfills.
 
 * **HTML5Shiv** by afarkas, Jon Neal & community - Polyfill for HTML5
 * **Flexibility.js** by 10up - Polyfill for Flexbox
-* **Picturefill.js** by Scott Jehl/Filament Group - Plyfill for responsive images (src-set)
+* **Picturefill.js** by Scott Jehl/Filament Group - Polyfill for responsive images (src-set)
 * **SVG4everybody** by Jonathan T Neal - Polyfill for using  external SVG spritemaps
-* **rAF** by Paul Irish - polyfill for requestAnimationFrame
+* **rAF** by Paul Irish - Polyfill for requestAnimationFrame
 
 ## How to use this Boilerplate
 First make sure you have Node, NPM, Gulp, Bower and Sass installed on your system. Plenty of resources out there for any help if necessary. After that:
