@@ -1,0 +1,32 @@
+/********************
+** CSS Triangle
+********************/
+
+// Triangle (with orientation as pointer direction)
+// @include triangle('left', 5, 5, #F00);
+@mixin triangle($direction, $width, $height, $color) {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  -webkit-transform: rotate(0.01deg); // Safari aliasing fix
+  @if ($direction == 'top') {
+    border-width: 0 #{$width/2}px #{$height}px #{$width/2}px;
+    border-color: transparent transparent $color transparent;
+    border-color: rgba(255,255,255,0) rgba(255,255,255,0) $color rgba(255,255,255,0);
+  }
+  @else if ($direction == 'right') {
+    border-width: #{$height/2}px 0 #{$height/2}px #{$width}px;
+    border-color: transparent transparent transparent $color;
+    border-color: rgba(255,255,255,0) rgba(255,255,255,0) rgba(255,255,255,0) $color;
+  }
+  @else if ($direction == 'bottom') {
+    border-width: #{$height}px #{$width/2}px 0 #{$width/2}px;
+    border-color: $color transparent transparent transparent;
+    border-color: $color rgba(255,255,255,0) rgba(255,255,255,0) rgba(255,255,255,0);
+  }
+  @else if ($direction == 'left') {
+    border-width: #{$height/2}px #{$width}px #{$height/2}px 0;
+    border-color: transparent $color transparent transparent;
+    border-color: rgba(255,255,255,0) $color rgba(255,255,255,0) rgba(255,255,255,0);
+  }
+}

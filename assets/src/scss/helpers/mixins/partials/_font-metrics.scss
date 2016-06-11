@@ -1,0 +1,12 @@
+/********************
+** Font Metrics
+********************/
+@mixin font-metrics($font-size: $default-font-size, $line-height: $default-line-height) {
+  @if $font-size {
+    font-size: $font-size;
+  }
+
+  @if $line-height {
+    line-height: $line-height;
+  }
+}
