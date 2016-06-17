@@ -44,3 +44,4 @@ I have plans to add video.js by zencoder to this boilerplate. Stay tuned.
 
 ## Issues
 If you run into any issues, let me know.
+
