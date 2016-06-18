@@ -24,8 +24,6 @@ You don't have to manually put `-js-display: flex;` everywhere, this is done aut
 Since this not needed for every project. If you want this to be included, you have to edit the gulpfile.js and uncomment the code below:
 ```javascript
 // 'bower_components/svg4everybody/dist/svg4everybody.js',
-...
-// 'assets/src/js/vendors/svg4everybody.js',
 ```
 
 Then initialize the script in /assets/src/js/site.js by adding:
