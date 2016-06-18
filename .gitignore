@@ -1,2 +1,14 @@
 bower_components
 node_modules
+
+assets/src/scss/base/_reset.scss
+assets/src/scss/base/_normalize.scss
+assets/src/scss/base/_support-for.scss
+assets/src/scss/base/_video-js.scss
+assets/src/scss/base/normalize
+
+assets/src/scss/icons
+assets/src/js/vendors
+assets/src/fonts
+
+assets/dist
