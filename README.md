@@ -9,6 +9,14 @@ A project boilerplate for your HTML project with jQuery, several awesome polyfil
 * **SVG4everybody.js** by Jonathan T Neal - Polyfill for using  external SVG spritemaps
 * **rAF.js** by Paul Irish - Polyfill for requestAnimationFrame
 
+## Other features
+* **Meyer Reset** by Eric Meyer
+* **Normalize SCSS** by John Albin
+* **Support-For** by John Albin
+* **VideoJS** by zencoder
+* **FontAwesome** by Dave Gandy
+* **jQuery** by John Resig
+
 ### Flexibility.js
 You don't have to manually put `-js-display: flex;` everywhere, this is done automatically through Gulp.
 
