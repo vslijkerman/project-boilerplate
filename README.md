@@ -39,8 +39,5 @@ var devUrl = ''; // Put your local development URl here. eg. http://localhost or
 6. If you're putting your project in Git, don't forget to add *bower_components* and *node_modules* folders in the .gitignore file.
 7. Make an awesome website.
 
-## More to come
-I have plans to add video.js by zencoder to this boilerplate. Stay tuned.
-
 ## Issues
 If you run into any issues, let me know.

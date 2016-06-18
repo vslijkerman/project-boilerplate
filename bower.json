@@ -24,6 +24,7 @@
     "picturefill": "https://github.com/scottjehl/picturefill.git#^3.0.2",
     "svg4everybody": "https://github.com/jonathantneal/svg4everybody.git#^2.0.3",
     "raf": "https://gist.github.com/1579671.git",
-    "fontawesome": "https://github.com/FortAwesome/Font-Awesome.git"
+    "fontawesome": "https://github.com/FortAwesome/Font-Awesome.git",
+    "videojs": "https://github.com/videojs/video.js.git"
   }
 }

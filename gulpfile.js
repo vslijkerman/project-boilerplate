@@ -38,6 +38,14 @@ gulp.task('copynormalize', function() {
   .pipe(gulp.dest('assets/src/scss/base/normalize'));
 });
 
+gulp.task('copyvideojs', function() {
+  gulp.src([
+    'bower_components/videojs/dist/video-js.css'
+  ])
+  .pipe(rename('_video-js.scss'))
+  .pipe(gulp.dest('assets/src/scss/base'));
+});
+
 gulp.task('copyfa', function() {
   gulp.src([
     'bower_components/fontawesome/scss/font-awesome.scss'
@@ -79,19 +87,22 @@ gulp.task('copyjs', function() {
     'bower_components/flexibility/dist/flexibility.js',
     'bower_components/picturefill/dist/picturefill.js',
     // 'bower_components/svg4everybody/dist/svg4everybody.js',
-    'bower_components/raf/rAF.js'
+    'bower_components/raf/rAF.js',
+    'bower_components/videojs/dist/video.min.js',
+    'bower_components/videojs/dist/ie8/videojs-ie8.min.js'
   ])
   .pipe(gulp.dest('assets/src/js/vendors'));
 });
 
 gulp.task('copyfonts', function() {
   gulp.src([
-    'bower_components/fontawesome/fonts/**/*.{otf,ttf,woff,woff2,eot,svg}'
+    'bower_components/fontawesome/fonts/**/*.{otf,ttf,woff,woff2,eot,svg}',
+    'bower_components/videojs/dist/font/**/*.{otf,ttf,woff,woff2,eot,svg}'
   ])
   .pipe(gulp.dest('assets/src/fonts'));
 });
 
-gulp.task('init', ['copyscss', 'copynormalize', 'copyfa', 'copyfapartials', 'copyjquery', 'copyjs','copyfonts']);
+gulp.task('init', ['copyscss', 'copynormalize', 'copyvideojs', 'copyfa', 'copyfapartials', 'copyjquery', 'copyjs','copyfonts']);
 
 /********************
 * Compile scss
