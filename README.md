@@ -1,6 +1,6 @@
 # Project Boilerplate
 
-A project boilerplate for your HTML project with jQuery, several awesome polyfills and FontAwesome.
+An SCSS, Gulp and BrowserSync based project boilerplate for your HTML5 project, shipped with jQuery, several awesome polyfills, FontAwesome and more.
 
 ## Polyfills
 * **HTML5Shiv.js** by afarkas, Jon Neal & community - Polyfill for HTML5
